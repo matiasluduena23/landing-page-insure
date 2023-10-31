@@ -1,0 +1,52 @@
+---
+const { title, links } = Astro.props;
+---
+
+<article>
+    <h3>{title}</h3>
+    <ul>
+        {
+            links &&
+                links.map((link: string) => (
+                    <li>
+                        <a href="#">{link}</a>
+                    </li>
+                ))
+        }
+    </ul>
+</article>
+
+<style>
+    article {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+
+    h3 {
+        font-family: var(--ff);
+        font-size: 14px;
+        color: var(--dark-grayish-violet);
+        margin-bottom: 2rem;
+    }
+
+    li {
+        margin-bottom: 0.7rem;
+    }
+
+    a {
+        font-weight: 700;
+        color: var(--very-dark-violet);
+        opacity: 0.9;
+    }
+
+    a:hover {
+        border-bottom: 1px solid var(--very-dark-violet);
+    }
+
+    @media (min-width: 660px) {
+        article {
+            text-align: start;
+        }
+    }
+</style>

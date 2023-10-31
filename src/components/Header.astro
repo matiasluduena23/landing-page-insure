@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+import hamburger from '../assets/icon-hamburger.svg';
+import NavLinks from '../components/NavLinks.astro';
+---
+
+<header class="main-header">
+    <div class="container">
+        <nav class="flex">
+            <a href="/" class="logo">
+                <Image src={logo} alt="logo" />
+            </a>
+            <button
+                class="hamburger"
+                aria-expanded="false"
+                aria-controls="navbar"
+            >
+                <Image src={hamburger} alt="logo" />
+            </button>
+            <NavLinks />
+        </nav>
+    </div>
+</header>
+
+<style>
+    header {
+        padding-block: 2rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 10;
+    }
+
+    header.active {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    button {
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+        button {
+            display: block;
+        }
+    }
+</style>

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+:root {
+  --dard-violet: hsl(256, 26%, 20%);
+  --grayish-blue: hsl(216, 30%, 68%);
+
+  --very-dark-violet: hsl(270, 9%, 17%);
+  --dark-grayish-violet: hsl(273, 4%, 51%);
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  --ff: 'Karla', sans-serif;
+  --ff-2: 'DM Serif Display', serif;
+
+}
+
+
+body {
+  font-family: var(--ff);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(85%, 1100px);
+  margin-inline: auto;
+}
+
+h1,h2,h3,h4 {
+  line-height: 1.1;
+  font-family: var(--ff-2);
+}
+
+a {
+  text-decoration: none;
+}
+
+li { 
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-auto{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+       
+
+.hamburger[aria-expanded="true"] + #navbar {
+  transform: translateX(0);
+}

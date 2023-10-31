@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import imgSnappy from '../assets/icon-snappy-process.svg';
+import imgAfford from '../assets/icon-affordable-prices.svg';
+import imgPeople from '../assets/icon-people-first.svg';
+---
+
+<div class="container">
+    <section>
+        <h2>We’re different</h2>
+        <div class="grid">
+            <article>
+                <Image src={imgSnappy} alt="icon" />
+                <h3>Snappy Process</h3>
+                <p>
+                    Our application process can be completed in minutes, not
+                    hours. Don’t get stuck filling in tedious forms.
+                </p>
+            </article>
+            <article>
+                <Image src={imgAfford} alt="icon" />
+                <h3>Affordable Prices</h3>
+                <p>
+                    We don’t want you worrying about high monthly costs. Our
+                    prices may be low, but we still offer the best coverage
+                    possible.
+                </p>
+            </article>
+            <article>
+                <Image src={imgPeople} alt="icon" />
+                <h3>People First</h3>
+                <p>
+                    Our plans aren’t full of conditions and clauses to prevent
+                    payouts. We make sure you’re covered when you need it.
+                </p>
+            </article>
+        </div>
+    </section>
+</div>
+
+<style>
+    section {
+        margin-block: 7rem;
+        text-align: center;
+        padding-top: 2rem;
+        position: relative;
+    }
+
+    section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 7rem;
+        background-color: var(--dard-violet);
+        opacity: 0.6;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 2rem;
+    }
+
+    h2 {
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        margin-bottom: 2rem;
+    }
+
+    article {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: var(--dark-grayish-violet);
+    }
+
+    @media (min-width: 660px) {
+        section {
+            text-align: start;
+            margin-top: 10rem;
+        }
+
+        section::before {
+            left: 3.4rem;
+        }
+        article {
+            align-items: start;
+        }
+    }
+
+    @media (min-width: 1100px) {
+        section {
+            margin-top: 15rem;
+        }
+    }
+</style>

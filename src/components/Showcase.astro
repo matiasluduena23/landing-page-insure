@@ -1,0 +1,155 @@
+---
+import imgMobile from '../assets/image-intro-mobile.jpg';
+import imgDesktop from '../assets/image-intro-desktop.jpg';
+import bgLeftDesktop from '../assets/bg-pattern-intro-left-desktop.svg';
+import bgRightMobile from '../assets/bg-pattern-intro-right-mobile.svg';
+import Button from './Button.astro';
+---
+
+<main>
+    <img class="bg-right" src={bgRightMobile.src} alt="image" />
+    <img class="bg-left" src={bgLeftDesktop.src} alt="" />
+
+    <img class="img-mobile" src={imgMobile.src} alt="family dancing" />
+    <div class="wrap-content">
+        <div class="container">
+            <div class="grid">
+                <img
+                    class="img-desktop"
+                    src={imgDesktop.src}
+                    alt="family dancing"
+                />
+                <div class="wrap-text">
+                    <h1>Humanizing your insurance.</h1>
+                    <p>
+                        Get your life insurance coverage easier and faster. We
+                        blend our expertise and technology to help you find the
+                        plan that’s right for you. Ensure you and your loved
+                        ones are protected.
+                    </p>
+                    <Button text="view plans" />
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    main {
+        margin-top: 6rem;
+    }
+
+    .img-mobile {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        max-height: 470px;
+    }
+
+    .img-desktop,
+    .bg-left {
+        display: none;
+    }
+
+    .bg-right {
+        position: absolute;
+        bottom: -250px;
+        right: 0;
+    }
+
+    .wrap-content {
+        padding-block: 5rem;
+        text-align: center;
+        color: var(--very-light-gray);
+        background: url('../assets/bg-pattern-intro-left-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-color: var(--dard-violet);
+    }
+
+    h1 {
+        color: var(--very-light-gray);
+        font-size: clamp(2.9rem, 5vw, 4rem);
+    }
+
+    p {
+        margin-block: 1rem;
+        opacity: 0.8;
+    }
+
+    @media (min-width: 660px) {
+        .img-mobile,
+        .bg-right {
+            display: none;
+        }
+
+        .img-desktop {
+            display: block;
+            max-height: 520px;
+            max-width: 450px;
+            object-fit: cover;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        .grid > * {
+            width: 50%;
+        }
+
+        .wrap-content {
+            background: none;
+            background-color: var(--dard-violet);
+            height: 500px;
+        }
+
+        .wrap-text {
+            text-align: start;
+            padding-top: 3rem;
+            position: relative;
+        }
+
+        .wrap-text::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 1px;
+            width: 7rem;
+            background-color: var(--very-light-gray);
+        }
+    }
+
+    @media (min-width: 1100px) {
+        .wrap-content {
+            height: 600px;
+        }
+
+        .img-desktop {
+            max-height: 720px;
+            max-width: 550px;
+        }
+
+        .bg-left,
+        .bg-right {
+            display: block;
+            position: absolute;
+        }
+
+        .bg-left {
+            top: 400px;
+            left: 0;
+        }
+
+        .bg-right {
+            content: url('../assets/bg-pattern-intro-right-desktop.svg');
+            bottom: auto;
+            right: -70px;
+            object-fit: contain;
+            z-index: 0;
+        }
+    }
+</style>

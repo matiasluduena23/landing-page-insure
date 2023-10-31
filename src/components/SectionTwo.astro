@@ -1,0 +1,48 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="container">
+    <h1>Find out more about how we work</h1>
+    <Button text="how we work" />
+</section>
+
+<style>
+    section {
+        background: url('../assets/bg-pattern-how-we-work-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-color: var(--dard-violet);
+        color: white;
+        padding: 4rem 2rem;
+        margin-bottom: 7rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 660px) {
+        section {
+            background: url('../assets/bg-pattern-how-we-work-desktop.svg');
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--dard-violet);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: start;
+            padding-inline: 4rem;
+        }
+
+        section > * {
+            width: 50%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+    }
+</style>

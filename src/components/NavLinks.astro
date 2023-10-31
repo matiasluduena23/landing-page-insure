@@ -1,0 +1,89 @@
+---
+
+---
+
+<ul id="navbar">
+    <li><a class="link-item" href="#">How we work</a></li>
+    <li><a class="link-item" href="#">Blog</a></li>
+    <li><a class="link-item" href="#">Account</a></li>
+    <li><a class="link-item" href="#">View plans</a></li>
+</ul>
+
+<style>
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        color: var(--dark-grayish-violet);
+        font-weight: 700;
+        transition: color 300ms ease;
+    }
+
+    a:hover {
+        color: var(--dard-violet);
+    }
+
+    li:last-child a {
+        color: var(--dard-violet);
+        border: 2px solid var(--dard-violet);
+        padding: 0.5rem 1.3rem;
+        transition: background-color 300ms ease;
+    }
+
+    li:last-child a:hover {
+        background-color: var(--dard-violet);
+        color: white;
+    }
+
+    @media (max-width: 800px) {
+        ul {
+            display: flex;
+            position: fixed;
+            top: 96px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding-top: 2rem;
+            flex-direction: column;
+            z-index: -1;
+            background: url('../assets/bg-pattern-mobile-nav.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 100%;
+            background-color: var(--very-dark-violet);
+            transform: translateX(-200%);
+            transition: transform 400ms ease-in;
+        }
+
+        a {
+            color: white;
+        }
+        a:hover {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+
+        li:last-child a {
+            color: var(--very-light-gray);
+            background-color: var(--very-dark-violet);
+            border: 2px solid var(--very-light-gray);
+            padding: 0.5rem 1.3rem;
+            transition: background-color 300ms ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        li:last-child:hover a {
+            color: var(--dard-violet);
+            background-color: var(--very-light-gray);
+        }
+    }
+</style>
